@@ -5,20 +5,21 @@
 
 /* --- Variables --- */
 :root {
-  --bg-primary: #07080c;
-  --bg-secondary: #0b0c11;
-  --bg-card: rgba(14, 15, 21, 0.7);
-  --bg-card-solid: #0e0f15;
-  --accent: #c4923a;
-  --accent-hover: #d8a84f;
-  --accent-dim: rgba(196, 146, 58, 0.10);
-  --accent-glow: rgba(196, 146, 58, 0.06);
-  --text-primary: #e8e4de;
-  --text-secondary: #7e7f87;
-  --text-dim: #3a3b42;
-  --border: rgba(255, 255, 255, 0.05);
-  --border-hover: rgba(255, 255, 255, 0.09);
-  --border-accent: rgba(196, 146, 58, 0.18);
+  --bg-primary: #0f0d0b;
+  --bg-secondary: #141210;
+  --bg-card: rgba(22, 20, 17, 0.75);
+  --bg-card-solid: #171513;
+  --accent: #f0735a;
+  --accent-hover: #f58d7a;
+  --accent-dim: rgba(240, 115, 90, 0.10);
+  --accent-glow: rgba(240, 115, 90, 0.06);
+  --accent-warm: #fbbf24;
+  --text-primary: #f5efe6;
+  --text-secondary: #9a938a;
+  --text-dim: #453f39;
+  --border: rgba(255, 255, 255, 0.06);
+  --border-hover: rgba(255, 255, 255, 0.10);
+  --border-accent: rgba(240, 115, 90, 0.20);
   --font-display: 'Instrument Serif', serif;
   --font-body: 'DM Sans', sans-serif;
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
@@ -210,7 +211,7 @@ body:hover .cursor-glow {
 }
 
 .nav-scrolled {
-  background: rgba(7, 8, 12, 0.82);
+  background: rgba(15, 13, 11, 0.85);
   backdrop-filter: blur(24px) saturate(180%);
   -webkit-backdrop-filter: blur(24px) saturate(180%);
   padding: 0.875rem 0;
@@ -343,9 +344,9 @@ body:hover .cursor-glow {
   position: relative;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(196, 146, 58, 0.10) 0%, transparent 100%),
-    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(30, 50, 120, 0.06) 0%, transparent 100%),
-    radial-gradient(ellipse 40% 50% at 15% 75%, rgba(196, 146, 58, 0.03) 0%, transparent 100%),
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(240, 115, 90, 0.10) 0%, transparent 100%),
+    radial-gradient(ellipse 50% 40% at 80% 60%, rgba(251, 191, 36, 0.06) 0%, transparent 100%),
+    radial-gradient(ellipse 40% 50% at 15% 75%, rgba(240, 115, 90, 0.03) 0%, transparent 100%),
     var(--bg-primary);
 }
 
@@ -353,7 +354,7 @@ body:hover .cursor-glow {
 .hero-grid-bg {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(circle, rgba(196, 146, 58, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(circle, rgba(240, 115, 90, 0.06) 1px, transparent 1px);
   background-size: 40px 40px;
   mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);
   -webkit-mask-image: radial-gradient(ellipse 60% 50% at 50% 50%, black 20%, transparent 70%);
@@ -369,7 +370,7 @@ body:hover .cursor-glow {
   position: absolute;
   width: 550px;
   height: 550px;
-  border: 1px solid rgba(196, 146, 58, 0.06);
+  border: 1px solid rgba(240, 115, 90, 0.06);
   border-radius: 50%;
   top: 5%;
   right: -10%;
@@ -380,7 +381,7 @@ body:hover .cursor-glow {
   position: absolute;
   width: 300px;
   height: 300px;
-  border: 1px solid rgba(196, 146, 58, 0.05);
+  border: 1px solid rgba(240, 115, 90, 0.05);
   top: 12%;
   left: -3%;
   transform: rotate(45deg);
@@ -391,7 +392,7 @@ body:hover .cursor-glow {
   position: absolute;
   width: 350px;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(196, 146, 58, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(240, 115, 90, 0.2), transparent);
   top: 32%;
   right: 3%;
   transform: rotate(-12deg);
@@ -401,7 +402,7 @@ body:hover .cursor-glow {
   position: absolute;
   width: 200px;
   height: 200px;
-  border: 1px solid rgba(196, 146, 58, 0.04);
+  border: 1px solid rgba(240, 115, 90, 0.04);
   border-radius: 50%;
   bottom: 18%;
   left: 6%;
@@ -412,7 +413,7 @@ body:hover .cursor-glow {
   position: absolute;
   width: 120px;
   height: 120px;
-  background: radial-gradient(circle, rgba(196, 146, 58, 0.05) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(240, 115, 90, 0.05) 0%, transparent 70%);
   border-radius: 50%;
   top: 25%;
   left: 18%;
@@ -447,7 +448,7 @@ body:hover .cursor-glow {
   border: 1px solid var(--border-accent);
   padding: 0.5rem 1.5rem;
   margin-bottom: 2.5rem;
-  background: rgba(196, 146, 58, 0.03);
+  background: rgba(240, 115, 90, 0.03);
   animation: fadeInUp 0.6s var(--ease-out) 0.2s both;
 }
 
@@ -1093,7 +1094,7 @@ body:hover .cursor-glow {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(196, 146, 58, 0.06) 0%, transparent 100%);
+    radial-gradient(ellipse 60% 50% at 50% 50%, rgba(240, 115, 90, 0.06) 0%, transparent 100%);
   pointer-events: none;
 }
 
@@ -1352,7 +1353,7 @@ body:hover .cursor-glow {
     right: 0;
     width: 300px;
     height: 100vh;
-    background: rgba(11, 12, 17, 0.98);
+    background: rgba(20, 18, 16, 0.98);
     backdrop-filter: blur(24px);
     flex-direction: column;
     justify-content: center;
