@@ -1,5 +1,5 @@
 // ============================================
-// PATEL AI SYSTEMS — Interactions
+// PATEL AI SYSTEMS — Interactions v2
 // ============================================
 
 (function () {
@@ -15,7 +15,7 @@
         }
       });
     },
-    { threshold: 0.1, rootMargin: '0px 0px -40px 0px' }
+    { threshold: 0.08, rootMargin: '0px 0px -30px 0px' }
   );
 
   document.querySelectorAll('.reveal').forEach((el) => {
@@ -24,12 +24,11 @@
 
   // --- Navbar scroll effect ---
   const nav = document.querySelector('.nav');
-  let lastScroll = 0;
 
   function onScroll() {
-    const scrollY = window.scrollY;
-    nav.classList.toggle('nav-scrolled', scrollY > 60);
-    lastScroll = scrollY;
+    if (nav) {
+      nav.classList.toggle('nav-scrolled', window.scrollY > 60);
+    }
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -48,8 +47,8 @@
         // Close mobile menu if open
         const menu = document.querySelector('.nav-links');
         const toggle = document.querySelector('.nav-toggle');
-        menu.classList.remove('active');
-        toggle.classList.remove('active');
+        if (menu) menu.classList.remove('active');
+        if (toggle) toggle.classList.remove('active');
 
         target.scrollIntoView({ behavior: 'smooth' });
       }
@@ -66,4 +65,39 @@
       navToggle.classList.toggle('active');
     });
   }
+
+  // --- Cursor glow follow ---
+  const cursorGlow = document.querySelector('.cursor-glow');
+
+  if (cursorGlow && window.matchMedia('(pointer: fine)').matches) {
+    let raf;
+    let targetX = 0;
+    let targetY = 0;
+    let currentX = 0;
+    let currentY = 0;
+
+    document.addEventListener('mousemove', (e) => {
+      targetX = e.clientX;
+      targetY = e.clientY;
+    });
+
+    function animateGlow() {
+      currentX += (targetX - currentX) * 0.08;
+      currentY += (targetY - currentY) * 0.08;
+      cursorGlow.style.left = currentX + 'px';
+      cursorGlow.style.top = currentY + 'px';
+      raf = requestAnimationFrame(animateGlow);
+    }
+
+    animateGlow();
+  }
+
+  // --- Card spotlight glow (follows mouse on glow-card elements) ---
+  document.querySelectorAll('.glow-card').forEach((card) => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mouse-x', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--mouse-y', (e.clientY - rect.top) + 'px');
+    });
+  });
 })();
